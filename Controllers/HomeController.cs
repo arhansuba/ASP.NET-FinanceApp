@@ -10,7 +10,7 @@ namespace YahooFinanceApp.Controllers
     [ApiController]
     public class HomeController : ControllerBase
     {
-        private const string AlphaVantageApiKey = "Z3CN8084JAY86743"; // Alpha Vantage API anahtarını buraya ekleyin
+        private const string AlphaVantageApiKey = "API key"; // Alpha Vantage API anahtarını buraya ekleyin
 
         [HttpGet]
         [Route("GetStockData")]
