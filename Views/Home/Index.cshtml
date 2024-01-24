@@ -1,0 +1,7 @@
+﻿<!-- Index.cshtml -->
+@using YahooFinanceApp.Models
+@model List<StockModel>
+
+<h2>Welcome to Yahoo Finance App!</h2>
+
+@await Html.PartialAsync("StockTable", Model)

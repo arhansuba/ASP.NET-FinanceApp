@@ -1,0 +1,6 @@
+@YahooFinanceApp_HostAddress = http://localhost:5127
+
+# GET isteði ile Yahoo Finance API'yi çaðýrma
+GET http://localhost:5127/Home/GetStockData?symbol=AAPL
+Accept: application/json
+

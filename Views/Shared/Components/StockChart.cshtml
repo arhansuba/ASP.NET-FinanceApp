@@ -1,0 +1,41 @@
+﻿<!-- StockChart.cshtml -->
+@model List<decimal>
+
+<div id="stockChart"></div>
+
+@section scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.min.js"></script>
+    <script>
+        var data = @Html.Raw(Json.Serialize(Model));
+
+        var ctx = document.getElementById('stockChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: data.map((value, index) => index + 1),
+                datasets: [{
+                    label: 'Stock Prices',
+                    data: data,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 2,
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        type: 'linear',
+                        position: 'bottom'
+                    },
+                    y: {
+                        min: Math.min(...data),
+                        max: Math.max(...data)
+                    }
+                }
+            }
+        });
+    </script>
+}
+
+

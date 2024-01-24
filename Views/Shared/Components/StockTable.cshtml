@@ -1,0 +1,26 @@
+﻿<!-- StockTable.cshtml -->
+@using YahooFinanceApp.Models
+@model List<StockModel>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Symbol</th>
+            <th>Company Name</th>
+            <th>Price</th>
+            <!-- Diğer sütunlar buraya eklenebilir -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var stock in Model)
+        {
+            <tr>
+                <td>@stock.Symbol</td>
+                
+                <td>@stock.Price</td>
+                <!-- Diğer sütunlar buraya eklenebilir -->
+            </tr>
+        }
+    </tbody>
+</table>
+
